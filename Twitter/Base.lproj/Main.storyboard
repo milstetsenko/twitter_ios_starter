@@ -8,15 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="iXa-iu-6Fx">
             <objects>
-                <viewController id="Lm5-Ys-JDB" sceneMemberID="viewController">
+                <viewController id="Lm5-Ys-JDB" customClass="LoginViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GzW-Iz-Jpk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-5h-28K">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-5h-28K">
                                 <rect key="frame" x="132" y="190" width="111" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="GFt-d1-3YY"/>
@@ -24,9 +24,12 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y9-Z9-mVf">
-                                <rect key="frame" x="132" y="306" width="94" height="54"/>
+                                <rect key="frame" x="132" y="306.5" width="94" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onLoginButton:" destination="Lm5-Ys-JDB" eventType="touchUpInside" id="GfA-se-9Pp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -49,21 +52,27 @@
             </objects>
             <point key="canvasLocation" x="-228" y="-57.121439280359823"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="xwd-Pe-gyC">
             <objects>
-                <tableViewController id="GvO-bS-nof" sceneMemberID="viewController">
+                <tableViewController id="GvO-bS-nof" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ofy-Io-Jjn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4hG-mP-jm9">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="121" id="4hG-mP-jm9">
+                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4hG-mP-jm9" id="Djy-1X-zqp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-kk-pTQ">
+                                            <rect key="frame" x="18" y="26" width="72" height="72"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -72,11 +81,18 @@
                             <outlet property="delegate" destination="GvO-bS-nof" id="7S5-PW-gw2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="v1m-Yd-sC3"/>
+                    <navigationItem key="navigationItem" title="Home" id="v1m-Yd-sC3">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="HUM-my-bCE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogount:" destination="GvO-bS-nof" id="bTn-9h-QFz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqz-2M-kQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="-57"/>
+            <point key="canvasLocation" x="1501.5999999999999" y="-57.121439280359823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qFi-F7-dne">
@@ -85,6 +101,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Awr-qi-KSQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.2329828095216824" green="0.5668602380969967" blue="0.96620899438858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="GvO-bS-nof" kind="relationship" relationship="rootViewController" id="q8z-ld-RQ7"/>
@@ -96,6 +116,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account-icon" width="30" height="25"/>
+        <image name="profile-Icon" width="26" height="26"/>
     </resources>
 </document>
