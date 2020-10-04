@@ -17,7 +17,11 @@ class HomeTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    override func tableView( tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
+            UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
