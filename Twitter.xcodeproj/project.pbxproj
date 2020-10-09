@@ -78,13 +78,13 @@
 			children = (
 				6EBCF54D21E71F9400451C03 /* Launch Screen.storyboard */,
 				6EBCF52921DF07FC00451C03 /* Main.storyboard */,
+				860A7921252A52DC00726BFC /* HomeTableViewController.swift */,
 				86C8E2F6252A6585005FDA1B /* TweetTableViewCell.swift */,
 				6EBCF54321E047A500451C03 /* TwitterAPICaller.swift */,
 				6EBCF52521DF07FC00451C03 /* AppDelegate.swift */,
 				37D29B8521F90E3400984A88 /* Assets.xcassets */,
 				6EBCF53121DF07FE00451C03 /* Info.plist */,
 				860A791F252A4D4C00726BFC /* LoginViewController.swift */,
-				860A7921252A52DC00726BFC /* HomeTableViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
